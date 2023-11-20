@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:watch": "vite build -w",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
     "version": "json -I -q -f manifest.json -e \"this.version=\\\"$npm_package_version\\\"; this.version_name=\\\"$npm_package_version\\\"\" && git commit -m $npm_package_version manifest.json"
   },
@@ -14,6 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
+    "@vitest/coverage-v8": "^0.34.6",
     "@vue/test-utils": "^2.4.2",
     "jsdom": "^22.1.0",
     "json": "^11.0.0",
