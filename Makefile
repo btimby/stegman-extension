@@ -19,7 +19,9 @@ dist/index.html: deps $(SOURCES)
 	npm run build
 
 stegman-extension-$(VERSION).xpi: dist/index.html
-	zip -o stegman-extension-$(VERSION).xpi -r dist manifest.json
+	cd dist/ && \
+	zip -o ../stegman-extension-$(VERSION).xpi -r . && \
+	cd ..
 
 build: dist/index.html
 

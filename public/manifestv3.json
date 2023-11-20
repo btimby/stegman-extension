@@ -1,0 +1,33 @@
+{
+    "name": "Stegman",
+    "description": "Steganographic messaging",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "index.html",
+      "default_title": "Open the popup"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://blank.org/*"
+        ],
+        "run_at": "document_end",
+        "js": [
+          "./content/index.js"
+        ],
+        "css": [
+          "./content/index.css"
+        ]
+      }
+    ],
+    "permissions": [
+      "storage"
+    ],
+    "background": {
+      "service_worker": "./background/index.js"
+    },
+    "icons": {
+      "128": "logo128.png"
+    }
+}

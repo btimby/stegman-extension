@@ -11,7 +11,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
-    "version": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" manifest.json | sponge manifest.json && git commit -m $npm_package_version manifest.json"
+    "version:manifest.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" dist/manifest.json | sponge dist/manifest.json",
+    "version:manifestv3.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" dist/manifestv3.json | sponge dist/manifestv3.json",
+    "version": "npm run version:manifest.json && npm run version:manifestv3.json && git commit -m $npm_package_version dist/manifest.json dist/manifestv3.json"
   },
   "dependencies": {
     "vue": "^3.3.8"
