@@ -1,13 +1,13 @@
 {
   "name": "chrome-extension",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "version": "json -I -f manifest.json -e 'this.version=\"$npm_package_version\"; this.version_name=\"$npm_package_version\"' && git commit -m $npm_package_version manifest.json"
+    "version": "json -I -f manifest.json -e \"this.version=\"$npm_package_version\"; this.version_name=\"$npm_package_version\"\" && git commit -m $npm_package_version manifest.json"
   },
   "dependencies": {
     "vue": "^3.3.8"
