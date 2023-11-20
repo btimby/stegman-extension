@@ -10,25 +10,25 @@
   "content_scripts": [
     {
       "matches": [
-        "https://blank.org/*"
+        "<all_urls>"
       ],
       "run_at": "document_end",
       "js": [
-        "./content/index.js"
+        "src/content/index.js"
       ],
       "css": [
-        "./content/index.css"
+        "src/content/index.css"
       ]
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "<all_urls>"
   ],
   "background": {
-    "service_worker": "./background/index.js"
+    "service_worker": "src/background/index.js"
   },
   "icons": {
     "128": "logo-128.png"
-  },
-  "version_name": "1.0.7"
+  }
 }
