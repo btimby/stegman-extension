@@ -9,12 +9,13 @@ VERSION = $(shell jq '.version' package.json)
 /usr/bin/jq:
 	sudo apt install -y jq
 
-deps: /usr/bin/sponge /usr/bin/jq
-
 node_modules: package-lock.json
 	npm i
+	touch node_modules
 
-dist/index.html: node_modules $(SOURCES)
+deps: node_modules /usr/bin/sponge /usr/bin/jq
+
+dist/index.html: deps $(SOURCES)
 	npm run build
 
 stegman-extension-$(VERSION).xpi: dist/index.html
@@ -22,21 +23,21 @@ stegman-extension-$(VERSION).xpi: dist/index.html
 
 build: dist/index.html
 
-build-watch: node_modules 
+build-watch: deps 
 	npm run build:watch
 
 build-xpi: stegman-extension-$(VERSION).xpi
 
-run: node_modules 
+run: deps
 	npm run dev
 
-test: node_modules 
+test: deps
 	npm run test
 
-test-watch: node_modules 
+test-watch: deps
 	npm run test:watch
 
-test-coverage: node_modules 
+test-coverage: deps
 	npm run test:coverage
 
 clean:
