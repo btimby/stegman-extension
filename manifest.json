@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Stegman",
-  "version": "1.0.2",
-  "version_name": "1.0.2",
+  "version": "1.0.3",
+  "version_name": "1.0.3",
   "description": "Steganographic messaging",
   "author": "Ben Timby <btimby@gmail.com>",
   "icons": {
