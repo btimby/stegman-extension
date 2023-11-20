@@ -1,9 +1,20 @@
 SOURCES = $(shell find src/ public/ index.html -type f)
-VERSION = $(shell npx json -f package.json version)
+VERSION = $(shell jq '.version' package.json)
 
 .PHONY: build build-xpi build-watch run test test-watch test-coverage
 
-dist/index.html: $(SOURCES)
+/usr/bin/sponge:
+	sudo apt install -y sponge
+
+/usr/bin/jq:
+	sudo apt install -y jq
+
+deps: /usr/bin/sponge /usr/bin/jq
+
+node_modules: package-lock.json
+	npm i
+
+dist/index.html: node_modules $(SOURCES)
 	npm run build
 
 stegman-extension-$(VERSION).xpi: dist/index.html
@@ -11,22 +22,22 @@ stegman-extension-$(VERSION).xpi: dist/index.html
 
 build: dist/index.html
 
-build-watch:
+build-watch: node_modules 
 	npm run build:watch
 
 build-xpi: stegman-extension-$(VERSION).xpi
 
-run:
+run: node_modules 
 	npm run dev
 
-test:
+test: node_modules 
 	npm run test
 
-test-watch:
+test-watch: node_modules 
 	npm run test:watch
 
-test-coverage:
+test-coverage: node_modules 
 	npm run test:coverage
 
 clean:
-	rm -rf dist/ stegman-extension-*.xpi
+	rm -rf dist/ coverage/ node_modules/ stegman-extension-*.xpi

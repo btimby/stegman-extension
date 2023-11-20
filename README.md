@@ -1,10 +1,7 @@
-# Vue 3 + Vite
+# Stegman
+Stegman is a steganographic messaging browser extension. It allows you to hide messages inside text that you post to social media or send via email.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Specifically, this extension provides a button for any input fields it finds on various websites. When you click the button, you can then provide a secret message to embed in the content of the input field.
 
 ## development
 
