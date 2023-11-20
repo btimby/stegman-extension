@@ -11,8 +11,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
-    "version:manifest.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" public/manifest.json | sponge public/manifest.json",
-    "version:manifestv3.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" public/manifestv3.json | sponge public/manifestv3.json",
+    "version:manifest.json": "jq \".version=\\\"$npm_package_version\\\"\" public/manifest.json | sponge public/manifest.json",
+    "version:manifestv3.json": "jq \".version=\\\"$npm_package_version\\\"\" public/manifestv3.json | sponge public/manifestv3.json",
     "version": "npm run version:manifest.json && npm run version:manifestv3.json && git commit -m $npm_package_version public/manifest.json public/manifestv3.json"
   },
   "dependencies": {

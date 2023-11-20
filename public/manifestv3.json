@@ -28,7 +28,7 @@
     "service_worker": "./background/index.js"
   },
   "icons": {
-    "128": "logo128.png"
+    "128": "logo-128.png"
   },
   "version_name": "1.0.7"
 }
