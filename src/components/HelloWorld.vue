@@ -8,7 +8,7 @@ export default {
 
   data() {
     return {
-      msg: 'Hello Stegman!',
+      msg: 'Hello Aaron!',
     };
   },
 };
