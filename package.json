@@ -1,7 +1,7 @@
 {
   "name": "chrome-extension",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,9 +11,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
-    "version:manifest.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" dist/manifest.json | sponge dist/manifest.json",
-    "version:manifestv3.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" dist/manifestv3.json | sponge dist/manifestv3.json",
-    "version": "npm run version:manifest.json && npm run version:manifestv3.json && git commit -m $npm_package_version dist/manifest.json dist/manifestv3.json"
+    "version:manifest.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" public/manifest.json | sponge public/manifest.json",
+    "version:manifestv3.json": "jq \".version=\\\"$npm_package_version\\\" | .version_name=\\\"$npm_package_version\\\"\" public/manifestv3.json | sponge public/manifestv3.json",
+    "version": "npm run version:manifest.json && npm run version:manifestv3.json && git commit -m $npm_package_version public/manifest.json public/manifestv3.json"
   },
   "dependencies": {
     "vue": "^3.3.8"
