@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "__MSG_extName__",
-  "homepage_url": "http://localhost:8080/",
-  "description": "A Vue Browser Extension",
+  "name": "Stegman",
+  "homepage_url": "https://github.com/btimby/stegman-extension/",
+  "description": "A steganographic messenger",
   "default_locale": "en",
   "permissions": [
     "activeTab",
@@ -22,10 +22,16 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "__MSG_extName__",
+    "default_title": "Stegman",
     "default_icon": {
       "19": "icons/19.png",
       "38": "icons/38.png"
     }
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content-script.js"]
+    }
+  ]
 }
