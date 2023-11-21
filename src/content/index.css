@@ -1,0 +1,17 @@
+.stegman-overlay {
+    z-index: 100;
+    position: absolute;
+    cursor: text;
+}
+
+.stegman-overlay img {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+}
+
+.stegman-overlay:hover img {
+    display: block;
+}

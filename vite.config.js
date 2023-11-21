@@ -1,12 +1,14 @@
 import path from "path";
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import copy from '@guanghechen/rollup-plugin-copy';
-import execute from 'rollup-plugin-execute';
+import { crx } from '@crxjs/vite-plugin'
+import manifest from './manifest.json' assert { type: 'json' } 
+//import copy from '@guanghechen/rollup-plugin-copy';
+//import execute from 'rollup-plugin-execute';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), crx({ manifest })],
   test: {
     globals: true,
     environment: "jsdom",
@@ -21,16 +23,8 @@ export default defineConfig({
       '@' : path.resolve(__dirname, './src')
     },
   },
-  build: {
+/*  build: {
     rollupOptions: {
-/*      input: {
-        main: path.resolve(__dirname, "index.html"),
-        'src/content/index.js': path.resolve(__dirname, "src/content/index.js"),
-        'background/index.html': path.resolve(__dirname, "src/background/index.html"),
-      },
-      output: {
-        entryFileNames: '[name]',
-      },*/
       plugins: [
         copy({
           targets: [
@@ -47,5 +41,5 @@ export default defineConfig({
         execute('xdg-open http://reload.extensions'),
       ]
     }
-  }
+  }*/
 })

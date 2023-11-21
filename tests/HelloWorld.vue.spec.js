@@ -6,7 +6,7 @@ describe("HelloWorld.vue", () => {
 
   it("can render the message", () => {
 
-    const message = "Hello World!";
+    const message = "Hello Aaron!";
     const wrapper = mount(HelloWorld, {
       props: { message },
     });
