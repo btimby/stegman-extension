@@ -6,7 +6,9 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'App',
+  // eslint-disable-next-line
+  name: 'Popup',
+
   components: { HelloWorld }
 }
 </script>
