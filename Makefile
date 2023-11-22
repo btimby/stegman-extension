@@ -1,4 +1,4 @@
-SOURCES = $(shell find src/ public/ index.html -type f)
+SOURCES = $(shell find src/ public/ -type f)
 VERSION = $(shell jq '.version' package.json)
 
 .PHONY: build build-xpi build-watch run test test-watch test-coverage
@@ -18,17 +18,10 @@ deps: node_modules /usr/bin/sponge /usr/bin/jq
 dist/index.html: deps $(SOURCES)
 	npm run build
 
-stegman-extension-$(VERSION).xpi: dist/index.html
-	cd dist/ && \
-	zip -o ../stegman-extension-$(VERSION).xpi -r . && \
-	cd ..
-
 build: dist/index.html
 
 build-watch: deps 
 	npm run build:watch
-
-build-xpi: stegman-extension-$(VERSION).xpi
 
 run: deps
 	npm run dev
@@ -43,4 +36,4 @@ test-coverage: deps
 	npm run test:coverage
 
 clean:
-	rm -rf dist/ coverage/ node_modules/ stegman-extension-*.xpi
+	rm -rf dist/ coverage/ artifacts/ node_modules/
