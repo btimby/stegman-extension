@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Compose</h1>
+    <h1>Compose steganographic message</h1>
     <Write
       width="100%"
       v-model="message"
@@ -53,6 +53,6 @@ export default {
 <style>
 html {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 </style>
