@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Compose</h1>
+    <Compose/>
     <textarea
       v-model="message"
       rows="5"
@@ -16,14 +17,14 @@
 </template>
 
 <script>
-//import { Compose } from 'stegman-vue';
+import Compose from 'stegman-vue';
 
 export default {
   // eslint-disable-next-line
   name: 'Compose',
 
   components: {
-//    Compose,
+    Compose,
   },
 
   data() {
