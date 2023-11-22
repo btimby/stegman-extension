@@ -1,12 +1,10 @@
 <template>
   <div>
     <h1>Compose</h1>
-    <Compose/>
-    <textarea
+    <Write
+      width="100%"
       v-model="message"
-      rows="5"
-      cols="80"
-    ></textarea>
+    />
     <button
       @click="close('cancel')"
     >cancel</button>
@@ -17,14 +15,15 @@
 </template>
 
 <script>
-import Compose from 'stegman-vue';
+import { Write } from 'stegman-vue';
+import 'stegman-vue/style.css'
 
 export default {
   // eslint-disable-next-line
   name: 'Compose',
 
   components: {
-    Compose,
+    Write,
   },
 
   data() {
@@ -53,7 +52,7 @@ export default {
 
 <style>
 html {
-  width: 400px;
+  width: 100%;
   height: 400px;
 }
 </style>
