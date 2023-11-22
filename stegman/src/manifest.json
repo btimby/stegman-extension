@@ -20,8 +20,11 @@
     ],
     "persistent": false
   },
+  "web_accessible_resources": [
+    "compose.html"
+  ],
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "index.html",
     "default_title": "Stegman",
     "default_icon": {
       "19": "icons/19.png",
@@ -31,7 +34,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["js/content-script.js"]
+      "js": ["js/highlight.js"],
+      "css": ["css/highlight.css"]
     }
   ]
 }

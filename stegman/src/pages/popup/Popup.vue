@@ -1,15 +1,14 @@
 <template>
-  <hello-world />
+  <div>Popup</div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   // eslint-disable-next-line
   name: 'Popup',
 
-  components: { HelloWorld }
+  components: {
+  }
 }
 </script>
 

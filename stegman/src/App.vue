@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <a href="https://github.com/btimby/stegman-extension/" target="_new">Home</a> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/">Cancel</router-link>
     </nav>
     <router-view/>
   </div>
@@ -28,5 +29,10 @@ nav {
       color: #42b983;
     }
   }
+}
+
+html {
+  width: 400px;
+  height: 400px;
 }
 </style>
