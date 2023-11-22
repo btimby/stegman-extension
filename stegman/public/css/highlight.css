@@ -1,0 +1,50 @@
+.stegman-overlay {
+    z-index: 100;
+    position: absolute;
+    cursor: text;
+}
+
+.stegman-overlay:hover {
+    pointer-events: none;
+}
+
+.stegman-overlay img {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+    pointer-events: auto;
+}
+
+.stegman-overlay:hover img {
+    display: block;
+}
+
+.stegman-overlay iframe {
+    border: 0px;
+    animation: iframe-fadein 0.3s ease;
+    background-color: white;
+}
+
+@keyframes iframe-fadein {
+    0% {
+        opacity: 0;
+        transform: scaleX(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(100%);
+    }
+}
+
+@keyframes iframe-fadeout {
+    0% {
+        opacity: 1;
+        transform: scaleX(100%);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0%);
+    }
+}

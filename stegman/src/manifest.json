@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Stegman",
+  "homepage_url": "https://github.com/btimby/stegman-extension/",
+  "description": "A steganographic messenger",
+  "default_locale": "en",
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+    "*://*/*"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "compose.html"
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Stegman",
+    "default_icon": {
+      "19": "icons/19.png",
+      "38": "icons/38.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/highlight.js"],
+      "css": ["css/highlight.css"]
+    }
+  ]
+}
