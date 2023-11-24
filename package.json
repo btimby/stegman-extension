@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.8.3",
-    "stegman-vue": "file:../stegman-vue-0.0.0.tgz",
+    "stegman-vue": "^1.0.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5",
     "vuex": "^4.1.0"
